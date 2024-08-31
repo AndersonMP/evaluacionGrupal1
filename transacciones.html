@@ -54,33 +54,42 @@
                 TABLA
             </div>
 
+
+
         </div>
         <div class="contenido" id="divTransacciones">
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">NUMERO DE CUENTA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="numeroDeCuenta"/>
                     </div>
+                   
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda();"/>
                 </div>
+                
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">VALOR</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="valor"/>
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
-                    <input type="button" value="RETIRAR" />
+                    <input type="button" value="DEPOSITAR" id="depositar" onclick="ejecutarDeposito();"/>
+                    <input type="button" value="RETIRAR" id="retirar" onclick="ejecutarRetiro();"/>
                     
+                </div>
+                <div>
+                    <h2 id="cuentaExistente"></h2>
                 </div>
               
             </div>
         </div>
+
+
         <div class="contenido" id="divMovimientos">
           
             <div class="inferior">
