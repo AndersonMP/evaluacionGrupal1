@@ -151,12 +151,13 @@ ejecutarBusqueda = function () {
 
 depositar = function (numeroCuenta, monto) {
     let cuentaAfectada;
+    let movimiento = {};
     cuentaAfectada = buscarCuenta(numeroCuenta);
     cuentaAfectada.saldo += monto;
-    cuentaAfectada.tipo = "C";
-    cuentaAfectada.monto = monto;
-    movimientos.push (cuentaAfectada);
-    console.log(movimientos);
+    movimiento.numeroCuenta = numeroCuenta;
+    movimiento.tipo = "C";
+    movimiento.monto = monto;
+    movimientos.push (movimiento);
 }
 
 ejecutarDeposito = function () {
@@ -170,13 +171,14 @@ ejecutarDeposito = function () {
 
 retirar = function (numeroCuenta, monto) {
     let cuentaAfectada;
+    let movimiento = {};
     cuentaAfectada = buscarCuenta(numeroCuenta);
     if(cuentaAfectada.saldo>=monto){
         cuentaAfectada.saldo -= monto;
-        cuentaAfectada.tipo = "D";
-        cuentaAfectada.monto = monto;
-        movimientos.push(cuentaAfectada);
-        console.log(movimientos);
+        movimiento.numeroCuenta = numeroCuenta;
+        movimiento.tipo = "D";
+        movimiento.monto = monto;
+        movimientos.push(movimiento);
         alert("TRANSACCION EXITOSA");
         mostrarTexto("cuentaExistente", "Numero de cuenta: " + cuentaAfectada.numeroCuenta + "\nCedula: " + cuentaAfectada.cedula + "\nNombre: " + cuentaAfectada.nombre + " " + cuentaAfectada.apellido + "\nSaldo: " + cuentaAfectada.saldo);
     }else{
